@@ -12,8 +12,7 @@ function App() {
     email: ''
   })
 
-  const API = 'http://localhost:5000/students'
-
+  const API = 'http://127.0.0.1:5000/students'
   const fetchStudents = async () => {
     try {
       const response = await fetch(`${API}?search=${encodeURIComponent(search)}`)
@@ -53,7 +52,8 @@ function App() {
       fetchStudents()
       alert('Student added successfully!')
     } catch (error) {
-      alert('Backend connection failed')
+      console.error('Add Student Error:', error)
+      alert('Backend connection failed: ' + error.message)
     }
   }
 

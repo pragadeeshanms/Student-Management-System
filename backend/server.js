@@ -92,4 +92,3 @@ mongoose.connect("mongodb://127.0.0.1:27017/student_db")
     .catch((err) => {
         console.log("Connection Error:", err.message);
     });
-
